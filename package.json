@@ -1,0 +1,53 @@
+{
+  "name": "react-marty-webpack-boilerplate",
+  "version": "0.12.0",
+  "engines": {
+    "node": "~1.4.3"
+  },
+  "description": "A boilerplate for use compiling static applications with ES6, React, React Router, Marty, and Webpack",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "reactjs",
+    "marty",
+    "martyjs",
+    "react-router"
+  ],
+  "author": {
+    "name": "Michael Diolosa",
+    "email": "michael.diolosa@gmail.com",
+    "url": "https://twitter.com/mbrio"
+  },
+  "contributors": [],
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mbrio/react-marty-webpack-boilerplate.git"
+  },
+  "homepage": "https://github.com/mbrio/react-marty-webpack-boilerplate",
+  "bugs": "https://github.com/mbrio/react-marty-webpack-boilerplate/issues",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-core": "^4.7.1",
+    "babel-loader": "^4.1.0",
+    "bootstrap": "^3.3.2",
+    "css-loader": "^0.9.1",
+    "file-loader": "^0.8.1",
+    "grunt": "^0.4.5",
+    "jsxhint": "^0.12.1",
+    "less": "^2.4.0",
+    "less-loader": "^2.1.0",
+    "marty": "^0.8.14",
+    "react": ">=0.12.2",
+    "react-hot-loader": "^1.1.7",
+    "script-loader": ">=0.6.1",
+    "style-loader": "^0.8.3",
+    "url-loader": "^0.5.5",
+    "webpack": ">=1.5.3",
+    "webpack-dev-server": "^1.7.0"
+  }
+}

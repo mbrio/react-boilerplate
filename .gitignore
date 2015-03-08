@@ -1,3 +1,7 @@
+# Junk files
+.DS_Store
+Thumbs.db
+
 # Logs
 logs
 *.log
@@ -16,8 +20,8 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
+# Compiled files
+build
 
 # Dependency directory
 # Commenting this out is preferred by some people, see
