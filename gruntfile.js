@@ -5,7 +5,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
-  var webpackConfig = require('./webpack.dev.config.js');
+  var environment = process.env.NODE_ENV || 'development';
+  var webpackConfig = require('./webpack.' + environment + '.config.js');
 
   grunt.initConfig({
     webpack: {
@@ -49,4 +50,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', ['build']);
+
+  // TODO: ADD CLEAN
+  // TODO: ADD SERVER
 }
