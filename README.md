@@ -7,44 +7,36 @@ Bootstrap, and LESS.
 ## Build
 
 In order to build the project you will first need to install all necessary node
-modules and have grunt-cli installed globally:
+modules:
 
 ```
-npm install -g grunt-cli
 npm install
 ```
 
-To build a development version of the project execute grunt:
+To build a development version of the project execute:
 
 ```
-grunt build
+npm run build
 ```
 
-To build a production version of the project you must set the `NODE_ENV`
-environment variable to *production* prior to executing grunt:
+To build a production version of the project execute:
 
 ```
-NODE_ENV=production grunt build
+npm run build:production
 ```
 
 ## Development Server
 
-Running grunt with no parameters will launch the development server with hot
-module swap enabled, this will allow you to edit your LESS and React components
-and immediately see your changes take place within your browser without having
-to reload.
+To launch the development server with hot module swap enabled execute:
 
 ```
-grunt
+npm run server
 ```
+
+This will allow you to edit your LESS and React components and immediately see
+your changes take place within your browser without having to reload.
 
 ## Production vs Development
-
-When running the build script grunt will try and load in the Webpack config file
-associated with the `NODE_ENV` environment variable. If `NODE_ENV` is not set
-then it will default to the *development* environment. The Webpack config file
-must be named `webpack.{environment}.config.js` where {environment}` is
-replaced with the environment's name (e.g. `webpack.development.config.js`).
 
 The Webpack configuration files supplied with React Boilerplate make available
 a global `NODE_ENV` variable within the compiled React application. This is done

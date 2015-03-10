@@ -6,7 +6,15 @@
   },
   "description": "A boilerplate for use compiling static applications consisting of ES6 source using Babel and Webpack. Comes pre-configured to use React, React Router, Marty, Bootstrap, and LESS.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build",
+    "lint": "jsxhint 'src/**/*.jsx' 'src/*.jsx'",
+    "build:development": "webpack --config webpack.development.config.js",
+    "build:production": "webpack --config webpack.production.config.js",
+    "prebuild:development": "npm run lint",
+    "prebuild:production": "npm run lint",
+    "build": "npm run build:development",
+    "start": "webpack-dev-server -c -d -h --progress --config webpack.development.config.js"
   },
   "keywords": [
     "webpack",
@@ -15,7 +23,9 @@
     "marty",
     "martyjs",
     "react-router",
-    "babel"
+    "babel",
+    "bootstrap",
+    "es6"
   ],
   "author": {
     "name": "Michael Diolosa",
@@ -37,10 +47,8 @@
     "classnames": "^1.1.4",
     "css-loader": "^0.9.1",
     "file-loader": "^0.8.1",
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-webpack": "^1.0.8",
     "jshint": "^2.6.3",
+    "jsxhint": "^0.12.1",
     "jsxhint-loader": "^0.2.0",
     "less": "^2.4.0",
     "less-loader": "^2.1.0",

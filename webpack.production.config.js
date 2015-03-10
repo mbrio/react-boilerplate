@@ -3,12 +3,10 @@ var path = require('path')
 
 module.exports = {
   target: 'web',
-  debug: true,
-  devtool: 'eval',
+  debug: false,
+  devtool: 'source-map',
   entry: {
     app: [
-      'webpack-dev-server/client?http://0.0.0.0:8080',
-      'webpack/hot/dev-server',
       './src/init',
       './src/assets/index.html'
     ]
@@ -23,7 +21,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify('development')
+      NODE_ENV: JSON.stringify('production')
     }),
   ],
   resolve: {
@@ -31,11 +29,8 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   module: {
-    preLoaders: [
-      { test: /\.jsx$/, exclude: /node_modules/, loader: 'jsxhint' },
-    ],
     loaders: [
-      { test: /\.jsx$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] },
+      { test: /\.jsx$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.less$/, loader: 'style!css!less' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
