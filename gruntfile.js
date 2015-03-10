@@ -2,7 +2,6 @@
 
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-webpack');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   var environment = process.env.NODE_ENV || 'development';
@@ -11,44 +10,26 @@ module.exports = function (grunt) {
   grunt.initConfig({
     webpack: {
       config: webpackConfig,
-      progress: true,
       stats: {
         colors: true
       }
     },
     clean: {
       build: ['build']
-    },
-    copy: {
-      assets: {
-        files: [
-          {
-            expand: true,
-            src: '**',
-            cwd: 'src/assets/',
-            dest: 'build/'
-          }
-        ]
-      }
     }
   });
-
-  grunt.registerTask('build:assets', [
-    'copy:assets'
-  ]);
 
   grunt.registerTask('build:js', [
     'webpack'
   ]);
 
   grunt.registerTask('build', [
-    'build:assets',
     'build:js'
   ]);
 
   grunt.registerTask('default', ['continuous']);
 
-  grunt.registerTask('continuous', ['build:assets', 'server'])
+  grunt.registerTask('continuous', ['server'])
 
   grunt.registerTask('server', function () {
     var done = this.async();
@@ -60,7 +41,6 @@ module.exports = function (grunt) {
     new WebpackDevServer(webpack(webpackConfig), {
       hot: true,
       publicPath: webpackConfig.output.publicPath,
-      contentBase: webpackConfig.output.path,
       quiet: false,
       noInfo: false,
       stats: { colors: true }
