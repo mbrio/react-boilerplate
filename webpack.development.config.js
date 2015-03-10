@@ -15,6 +15,9 @@ module.exports = {
     publicPath: '/js/',
     filename: '[name].js'
   },
+  jshint: {
+    esnext: true
+  },
   plugins: [
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify('development')
@@ -25,17 +28,20 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   module: {
+    preLoaders: [
+      { test: /\.jsx$/, exclude: /node_modules/, loader: 'jsxhint' },
+    ],
     loaders: [
       { test: /\.jsx$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] },
       { test: /\.less$/, loader: 'style!css!less' },
-      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&minetype=application/font-woff" },
-      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&minetype=application/font-woff" },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&minetype=application/octet-stream" },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&minetype=image/svg+xml" },
-      { test: /\.png(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&minetype=image/png" },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "file" },
-      { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/,    loader: "file" },
-      { test: /\.gif(\?v=\d+\.\d+\.\d+)?$/,    loader: "file" }
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff" },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/octet-stream" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=image/svg+xml" },
+      { test: /\.png(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=image/png" },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.gif(\?v=\d+\.\d+\.\d+)?$/, loader: "file" }
     ]
   }
 };

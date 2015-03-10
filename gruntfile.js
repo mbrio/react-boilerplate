@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function (grunt) {
-  grunt.loadNpmTasks('grunt-jsxhint');
   grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
@@ -11,15 +10,6 @@ module.exports = function (grunt) {
   grunt.initConfig({
     webpack: {
       config: webpackConfig
-    },
-    jshint: {
-      options: {
-        esnext: true
-      },
-      all: [
-        'src/*.jsx',
-        'src/**/*.jsx'
-      ]
     },
     copy: {
       assets: {
@@ -40,7 +30,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build:js', [
-    'jshint',
     'webpack'
   ]);
 
