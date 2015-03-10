@@ -14,7 +14,8 @@
     "reactjs",
     "marty",
     "martyjs",
-    "react-router"
+    "react-router",
+    "babel"
   ],
   "author": {
     "name": "Michael Diolosa",
@@ -38,8 +39,8 @@
     "file-loader": "^0.8.1",
     "grunt": "^0.4.5",
     "grunt-contrib-copy": "^0.8.0",
-    "grunt-jsxhint": "^0.5.0",
     "grunt-webpack": "^1.0.8",
+    "jshint": "^2.6.3",
     "jsxhint-loader": "^0.2.0",
     "less": "^2.4.0",
     "less-loader": "^2.1.0",
@@ -50,6 +51,10 @@
     "react-tools": "^0.12.2",
     "script-loader": ">=0.6.1",
     "style-loader": "^0.8.3",
-    "url-loader": "^0.5.5"
+    "url-loader": "^0.5.5",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
   }
 }
