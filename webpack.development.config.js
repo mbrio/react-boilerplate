@@ -1,17 +1,21 @@
 var webpack = require('webpack');
 var path = require('path')
 
+var environment = process.env.NODE_ENV || 'development';
+
 module.exports = {
   target: 'web',
   debug: true,
   devtool: 'eval',
   entry: {
     app: [
+      'webpack-dev-server/client?http://0.0.0.0:8080',
+      'webpack/hot/only-dev-server',
       './src/init'
     ]
   },
   output: {
-    path: path.join(__dirname, 'build/js/'),
+    path: path.join(__dirname, './build/'),
     publicPath: '/js/',
     filename: '[name].js'
   },
@@ -19,9 +23,11 @@ module.exports = {
     esnext: true
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify('development')
-    })
+      NODE_ENV: JSON.stringify(environment)
+    }),
+    new webpack.NoErrorsPlugin()
   ],
   resolve: {
     modulesDirectories: ['node_modules'],

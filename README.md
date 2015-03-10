@@ -43,8 +43,8 @@ grunt
 When running the build script grunt will try and load in the Webpack config file
 associated with the `NODE_ENV` environment variable. If `NODE_ENV` is not set
 then it will default to the *development* environment. The Webpack config file
-must be named *webpack.{environment}.config.js* where *{environment}* is
-replaced with the environment's name (e.g. webpack.development.config.js).
+must be named `webpack.{environment}.config.js` where {environment}` is
+replaced with the environment's name (e.g. `webpack.development.config.js`).
 
 The Webpack configuration files supplied with React Boilerplate make available
 a global `NODE_ENV` variable within the compiled React application. This is done

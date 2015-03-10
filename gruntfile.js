@@ -9,7 +9,11 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     webpack: {
-      config: webpackConfig
+      config: webpackConfig,
+      progress: true,
+      stats: {
+        colors: true
+      }
     },
     copy: {
       assets: {
@@ -38,7 +42,27 @@ module.exports = function (grunt) {
     'build:js'
   ]);
 
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', ['server']);
+
+  grunt.registerTask('server', function () {
+    var done = this.async();
+    var webpack = require('webpack');
+    var WebpackDevServer = require('webpack-dev-server');
+    var host = '0.0.0.0';
+    var port = 8080;
+
+    new WebpackDevServer(webpack(webpackConfig), {
+      hot: true,
+      publicPath: webpackConfig.output.publicPath,
+      contentBase: webpackConfig.output.path,
+      progress: true,
+      debug: true,
+      stats: { color: true }
+    }).listen(port, host, function (err, result) {
+      if (err) { console.log(err); }
+      console.log('Hot server listening at '+ host +':'+ port);
+    });
+  });
 
   // TODO: ADD CLEAN
   // TODO: ADD SERVER

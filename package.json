@@ -2,9 +2,11 @@
   "name": "react-marty-webpack-boilerplate",
   "version": "0.12.0",
   "engines": {
-    "node": "~1.4.3"
+    "node": "~1.4",
+    "node": "~0.12",
+    "node": "~0.10"
   },
-  "description": "A boilerplate for use compiling static applications with ES6, React, React Router, Marty, Bootstrap, LESS, and Webpack",
+  "description": "A boilerplate for use compiling static applications consisting of ES6 source using Babel and Webpack. Comes pre-configured to use React, React Router, Marty, Bootstrap, and LESS.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
