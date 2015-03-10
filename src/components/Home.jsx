@@ -8,6 +8,9 @@ export default React.createClass({
     return (
       <div>
         <Navigation />
+        <div className='container'>
+          <h2>Home</h2>
+        </div>
       </div>
     );
   }

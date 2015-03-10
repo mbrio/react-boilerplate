@@ -3,6 +3,7 @@
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   var environment = process.env.NODE_ENV || 'development';
   var webpackConfig = require('./webpack.' + environment + '.config.js');
@@ -14,6 +15,9 @@ module.exports = function (grunt) {
       stats: {
         colors: true
       }
+    },
+    clean: {
+      build: ['build']
     },
     copy: {
       assets: {
@@ -42,7 +46,9 @@ module.exports = function (grunt) {
     'build:js'
   ]);
 
-  grunt.registerTask('default', ['server']);
+  grunt.registerTask('default', ['continuous']);
+
+  grunt.registerTask('continuous', ['build:assets', 'server'])
 
   grunt.registerTask('server', function () {
     var done = this.async();
@@ -55,15 +61,12 @@ module.exports = function (grunt) {
       hot: true,
       publicPath: webpackConfig.output.publicPath,
       contentBase: webpackConfig.output.path,
-      progress: true,
-      debug: true,
-      stats: { color: true }
+      quiet: false,
+      noInfo: false,
+      stats: { colors: true }
     }).listen(port, host, function (err, result) {
       if (err) { console.log(err); }
       console.log('Hot server listening at '+ host +':'+ port);
     });
   });
-
-  // TODO: ADD CLEAN
-  // TODO: ADD SERVER
 }
