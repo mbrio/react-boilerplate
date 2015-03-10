@@ -1,7 +1,8 @@
 # React Boilerplate
 
-A boilerplate for use compiling static applications with ES6, React, React
-Router, Marty, Bootstrap, LESS, and Webpack.
+A boilerplate for use compiling static applications consisting of ES6 source
+using Babel and Webpack. Comes pre-configured to use React, React Router, Marty,
+Bootstrap, and LESS.
 
 ## Build
 
@@ -19,14 +20,12 @@ To build a development version of the project execute grunt:
 grunt build
 ```
 
-To build a production version of the project you must set the `NODE_ENV` to
-production prior to executing grunt:
+To build a production version of the project you must set the `NODE_ENV`
+environment variable to *production* prior to executing grunt:
 
 ```
 NODE_ENV=production grunt build
 ```
-
-The built application will reside in the *build* directory.
 
 ## Development Server
 
@@ -41,19 +40,20 @@ grunt
 
 ## Production vs Development
 
-When running the build script grunt will try and load in the webpack config file
+When running the build script grunt will try and load in the Webpack config file
 associated with the `NODE_ENV` environment variable. If `NODE_ENV` is not set
-then it will default to the *development* environment. The webpack config file
+then it will default to the *development* environment. The Webpack config file
 must be named *webpack.{environment}.config.js* where *{environment}* is
 replaced with the environment's name (e.g. webpack.development.config.js).
 
 The Webpack configuration files supplied with React Boilerplate make available
-a global `NODE_ENV` variable within the React application through the use of
-`webpack.DefinePlugin` that corresponds with the environment specified.
+a global `NODE_ENV` variable within the compiled React application. This is done
+through the use of the `webpack.DefinePlugin`.
 
 ## Project Layout
 
-All source code resides in the *src* directory.
+All source code resides in the *src* directory, the compiled static application
+will reside in the *build* directory.
 
 ### Initialization
 
@@ -72,13 +72,15 @@ root of *src/components* is meant for the application's route handlers while the
 *shared* directory is meant to hold any components that are reused throughout
 the application.
 
-React Boilerplate is configured to store LESS files alongside the components
-that they style and to import them using Webpack. Every React component that
-represents a UI element will have a corresponding LESS file, and shared LESS
-files are imported and configured within *src/init.less*.
+### LESS
 
-Shared LESS files reside in *src/less* and must be imported within
-*src/init.less*.
+React Boilerplate is configured to store LESS files alongside the components
+they style and to import them using Webpack from within the JSX source. Most
+React components that represent a UI element will have a corresponding LESS
+file, and shared LESS files are imported and configured within *src/init.less*.
+
+*src/init.less* imports both Bootstrap and it's theme. You may override the
+default Bootstrap variables by editing *src/less/variables.less*.
 
 ### Marty
 
@@ -92,3 +94,7 @@ Any files needing to be directly copied into the *build* directory, separately
 from what is imported using Webpack, must be placed within the *src/assets*
 folder. All files within this directory are copied into *build*, and are made
 available to the application.
+
+## License
+
+React Boilerplate is [BSD licensed](./LICENSE).
