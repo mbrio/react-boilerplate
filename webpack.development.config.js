@@ -10,7 +10,7 @@ module.exports = {
       'webpack-dev-server/client?http://0.0.0.0:8080',
       'webpack/hot/dev-server',
       './src/init',
-      './src/assets/index.html'
+      './src/index.html'
     ]
   },
   output: {
@@ -45,7 +45,7 @@ module.exports = {
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.gif(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-      { test: /\.html(\?v=\d+\.\d+\.\d+)?$/, exclude: /node_modules/, loader: "file?name=[path][name].[ext]&context=src/assets" }
+      { test: /\.html(\?v=\d+\.\d+\.\d+)?$/, exclude: /node_modules/, loader: "file?name=[path][name].[ext]&context=src" }
     ]
   }
 };

@@ -80,13 +80,6 @@ Flux is handled by Martyjs in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
 in *src/actions*; and all constants reside in *src/constants*.
 
-### Assets
-
-Any files needing to be directly copied into the *build* directory, separately
-from what is imported using Webpack, must be placed within the *src/assets*
-folder. All files within this directory are copied into *build*, and are made
-available to the application.
-
 ## License
 
 React Boilerplate is [BSD licensed](./LICENSE).

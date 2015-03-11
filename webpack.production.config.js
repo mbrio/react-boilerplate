@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     app: [
       './src/init',
-      './src/assets/index.html'
+      './src/index.html'
     ]
   },
   output: {
