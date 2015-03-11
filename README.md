@@ -30,7 +30,7 @@ npm run build:production
 To launch the development server with hot module swap enabled execute:
 
 ```
-npm run server
+npm run start
 ```
 
 This will allow you to edit your LESS and React components and immediately see
