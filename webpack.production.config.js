@@ -40,7 +40,7 @@ module.exports = {
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.gif(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-      { test: /\.html(\?v=\d+\.\d+\.\d+)?$/, exclude: /node_modules/, loader: "file?name=[path][name].[ext]&context=src/assets" }
+      { test: /\.html(\?v=\d+\.\d+\.\d+)?$/, exclude: /node_modules/, loader: "file?name=[path][name].[ext]&context=src" }
     ]
   }
 };

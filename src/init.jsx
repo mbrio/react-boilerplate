@@ -1,13 +1,21 @@
 import * as less from './init.less';
 
-// Needed for Bootstrap
-//
-// import jQuery from 'jquery';
-// window.jQuery = jQuery;
+/*
+ * jQuery is needed for Bootstrap JS. This is **NOT** the preferred method of
+ * linking jQuery, it is merely included for a quick offline fix. If you need to
+ * use any Bootstrap JS it is strongly suggested to link the CDN jQuery from
+ * within `src/index.html`.
+ */
 
-// Uncomment the modules you would like to use, you must also uncomment the
-// jQuery line above.
-//
+// import jq from 'jquery';
+// if (window.jQuery === undefined) {
+//   window.jQuery = jq;
+// }
+
+/*
+ * Uncomment the Bootstrap modules you would like to use within your code.
+ */
+
 // import * as bsAffix from 'bootstrap/js/affix.js';
 // import * as bsAlert from 'bootstrap/js/alert.js';
 // import * as bsTooltip from 'bootstrap/js/tooltip.js';
@@ -24,9 +32,23 @@ import * as less from './init.less';
 import React from 'react';
 import Router from 'react-router';
 import routes from './routes';
-
 const { HashLocation, HistoryLocation } = Router;
 
-Router.run(routes, function(Handler) {
+// Configure React Router to use hash locations to determine the current
+// route. (e.g. http://example.com#/home).
+let location = HashLocation;
+
+/*
+ * Sometimes in production you may want to use the HTML5 history API for
+ * cleaner URLs (e.g. http://example.com/home), I've included a `.htaccess` file
+ * that redirects all web traffic to index.html for use with single page
+ * applications and you'll need to uncomment the following lines:
+ */
+
+// if (NODE_ENV === 'production') {
+//   location = HistoryLocation;
+// }
+
+Router.run(routes, location, function(Handler) {
   return React.render(<Handler />, document.body);
 });
