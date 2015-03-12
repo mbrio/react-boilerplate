@@ -1,6 +1,6 @@
 import React from 'react';
 import Marty from 'marty';
-import FluxList from './shared/FluxList';
+import FluxList from '../components/FluxList';
 
 // A route handler that represents the Home route.
 export default React.createClass({

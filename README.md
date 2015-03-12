@@ -66,12 +66,13 @@ you may want to make use of the *config/htaccess* file supplied that re-routes
 all server requests to *index.html*, this allows you to use a single file on
 Apache servers and redirect all routes to it.
 
-### React Components
+### React Route Handlers
 
-All of the application's React components reside within *src/components*. The
-root of *src/components* is meant for the application's route handlers while the
-*shared* directory is meant to hold any components that are reused throughout
-the application.
+All of the application's React route handlers reside within *src/routes*.
+
+### React Shared Components
+
+All of the application's React shared components reside within *src/components*.
 
 ### LESS
 

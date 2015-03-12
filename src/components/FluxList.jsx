@@ -1,7 +1,7 @@
 import React from 'react';
 import Marty from 'marty';
-import FluxStore from '../../stores/FluxStore';
-import FluxActions from '../../actions/FluxActions';
+import FluxStore from '../stores/FluxStore';
+import FluxActions from '../actions/FluxActions';
 import FluxListItem from './FluxListItem';
 
 // A state mixin to be used by `FluxList`.

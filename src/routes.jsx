@@ -3,8 +3,8 @@ import Router from 'react-router';
 const { Route, DefaultRoute } = Router;
 
 // You must import all of the components that represent route handlers
-import Home from './components/Home';
-import App from './components/App';
+import Home from './routes/Home';
+import App from './routes/App';
 
 export default (
   <Route path="/" handler={App}>
