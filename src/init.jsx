@@ -9,7 +9,7 @@ import * as less from './init.less';
 
 // import jq from 'jquery';
 // if (window.jQuery === undefined) {
-//   window.jQuery = jq;
+//   window.$ = window.jQuery = jq;
 // }
 
 /*

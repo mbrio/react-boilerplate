@@ -4,6 +4,7 @@ import Router from 'react-router';
 
 const { RouteHandler, Link } = Router;
 
+// A route handler that contains the entirety of the application.
 export default React.createClass({
   displayName: 'App',
 

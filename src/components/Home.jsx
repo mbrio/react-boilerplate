@@ -2,6 +2,7 @@ import React from 'react';
 import Marty from 'marty';
 import FluxList from './shared/FluxList';
 
+// A route handler that represents the Home route.
 export default React.createClass({
   displayName: 'Home',
 

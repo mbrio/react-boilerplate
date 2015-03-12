@@ -1,6 +1,7 @@
 import * as less from './FluxListItem.less';
 import React from 'react';
 
+// A UI element representing a single item within the Flex library list.
 export default React.createClass({
   displayName: 'FluxListItem',
 
@@ -11,12 +12,14 @@ export default React.createClass({
     onMoveUp: React.PropTypes.func.isRequired
   },
 
+  // Event handler for when the icon representing moving up is clicked.
   onMoveUp: function (ev) {
     ev.preventDefault();
 
     this.props.onMoveUp();
   },
 
+  // Event handler for when the icon representing moving down is clicked.
   onMoveDown: function (ev) {
     ev.preventDefault();
 
