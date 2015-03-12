@@ -46,11 +46,7 @@ export default Marty.createStore({
 
     const newIndex = index - 1;
 
-    const newOrder = this.state.fluxLibraries.slice(newIndex, index + 1).reverse().toArray();
-    const newState = this.state.fluxLibraries.splice(newIndex, 2, ...newOrder);
-
-    this.state.fluxLibraries = newState;
-    this.hasChanged();
+    this.swapIndexes(newIndex, index);
   },
 
   moveDown: function (fluxLibrary) {
@@ -62,8 +58,12 @@ export default Marty.createStore({
 
     const newIndex = index + 1;
 
-    const newOrder = this.state.fluxLibraries.slice(index, newIndex + 1).reverse().toArray();
-    const newState = this.state.fluxLibraries.splice(index, 2, ...newOrder);
+    this.swapIndexes(index, newIndex);
+  },
+
+  swapIndexes: function (a, b) {
+    const newOrder = this.state.fluxLibraries.slice(a, b + 1).reverse().toArray();
+    const newState = this.state.fluxLibraries.splice(a, 2, ...newOrder);
 
     this.state.fluxLibraries = newState;
     this.hasChanged();
