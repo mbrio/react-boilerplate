@@ -80,6 +80,9 @@ Flux is handled by Martyjs in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
 in *src/actions*; and all constants reside in *src/constants*.
 
+In this example I use immutable data for my Flux store, but it is not necessary,
+if is merely a suggested practice by [Marty](http://martyjs.org/guides/stores/immutable-data-collections.html), feel free to remove this if required.
+
 ## License
 
 React Boilerplate is [BSD licensed](./LICENSE).
