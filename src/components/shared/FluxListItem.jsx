@@ -1,3 +1,4 @@
+import * as less from './FluxListItem.less';
 import React from 'react';
 
 export default React.createClass({
@@ -24,12 +25,12 @@ export default React.createClass({
 
   render: function () {
     return (
-      <li className='list-group-item'>
+      <li className='flux-list-item list-group-item'>
         <a href={this.props.url} target='_blank'>{this.props.name}</a>
-        <span className='badge'>
-          <a href='#' onClick={this.onMoveDown}><span className='glyphicon glyphicon-menu-down' aria-hidden='true'></span></a>
-          <a href='#' onClick={this.onMoveUp}><span className='glyphicon glyphicon-menu-up' aria-hidden='true'></span></a>
-        </span>
+        <ul className='list-inline pull-right'>
+          <li><a href='#' onClick={this.onMoveDown} className='glyphicon glyphicon-menu-down' title={'Move ' + this.props.name + ' Down'}></a></li>
+          <li><a href='#' onClick={this.onMoveUp} className='glyphicon glyphicon-menu-up' title={'Move ' + this.props.name + ' Up'}></a></li>
+        </ul>
       </li>
     );
   }

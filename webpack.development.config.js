@@ -25,6 +25,7 @@ module.exports = {
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify('development')
     }),
+    new webpack.NoErrorsPlugin()
   ],
   resolve: {
     modulesDirectories: ['node_modules'],
