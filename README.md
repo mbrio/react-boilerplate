@@ -25,6 +25,12 @@ To build a production version of the project execute:
 npm run build:production
 ```
 
+To clean the directory execute:
+
+```
+npm run clean
+```
+
 ## Development Server
 
 To launch the development server with hot module swap enabled execute:
