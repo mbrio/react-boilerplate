@@ -11,7 +11,7 @@ correspond with different versions of React and various Flux libraries.
 Comes pre-configured to use React 0.12, React Router, Marty,
 Bootstrap, and LESS.
 
-[https://github.com/mbrio/react-boilerplate/tree/react-0.12-marty]
+https://github.com/mbrio/react-boilerplate/tree/react-0.12-marty
 
 ## License
 
