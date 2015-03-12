@@ -5,13 +5,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf -rf build",
-    "lint": "jsxhint 'src/**/*.jsx' 'src/*.jsx'",
-    "build:development": "webpack --config webpack.development.config.js",
-    "build:production": "webpack --config webpack.production.config.js",
-    "prebuild:development": "npm run lint",
-    "prebuild:production": "npm run lint",
+    "build:development": "webpack --config ./config/webpack.development.js",
+    "build:production": "webpack --config ./config/webpack.production.js",
     "build": "npm run build:development",
-    "start": "webpack-dev-server -c -d -h --progress --config webpack.development.config.js"
+    "start": "webpack-dev-server -c -d -h --progress --config ./config/webpack.hot.js"
   },
   "keywords": [
     "webpack",

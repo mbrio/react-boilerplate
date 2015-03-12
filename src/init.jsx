@@ -34,15 +34,18 @@ import Router from 'react-router';
 import routes from './routes';
 const { HashLocation, HistoryLocation } = Router;
 
+console.log('Initializing in ' + NODE_ENV + ' mode.');
+
 // Configure React Router to use hash locations to determine the current
 // route. (e.g. http://example.com#/home).
 let location = HashLocation;
 
 /*
  * Sometimes in production you may want to use the HTML5 history API for
- * cleaner URLs (e.g. http://example.com/home), I've included a `/.htaccess`
- * file that redirects all web traffic to `index.html` for use with single page
- * applications, and you'll need to uncomment the following lines:
+ * cleaner URLs (e.g. http://example.com/home), I've included a
+ * `/config/htaccess` file that redirects all web traffic to `index.html` for
+ * use with single page applications, and you'll need to uncomment the following
+ * lines:
  */
 
 // if (NODE_ENV === 'production') {

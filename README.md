@@ -61,7 +61,10 @@ application's routes, and runs the React Router on `document.body`.
 ### Routing
 
 This configuration uses React Router for all routing needs, you must specify
-your routes within *src/routes.jsx*.
+your routes within *src/routes.jsx*. When using `HistoryLocation` for routing
+you may want to make use of the *config/htaccess* file supplied that re-routes
+all server requests to *index.html*, this allows you to use a single file on
+Apache servers and redirect all routes to it.
 
 ### React Components
 
@@ -87,7 +90,8 @@ multiple locations; all data stores reside in *src/stores*; all actions reside
 in *src/actions*; and all constants reside in *src/constants*.
 
 In this example I use immutable data for my Flux store, but it is not necessary,
-if is merely a suggested practice by [Marty](http://martyjs.org/guides/stores/immutable-data-collections.html), feel free to remove this if required.
+if is merely a suggested practice by [Marty](
+tp://martyjs.org/guides/stores/immutable-data-collections.html), feel free to remove this if required.
 
 ## License
 
