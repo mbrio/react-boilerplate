@@ -1,16 +1,19 @@
 import React from 'react';
-import Marty from 'marty';
+import Marty from 'marty/dist/node/marty';
 import FluxStore from '../stores/FluxStore';
 import FluxActions from '../actions/FluxActions';
 import FluxListItem from './FluxListItem';
 
+let fluxStore = new FluxStore();
+let fluxActions = new FluxActions();
+
 // A state mixin to be used by `FluxList`.
 let FluxState = Marty.createStateMixin({
-  listenTo: [FluxStore],
+  listenTo: [fluxStore],
 
   getState: function () {
     return {
-      fluxLibraries: FluxStore.getState().fluxLibraries
+      fluxLibraries: fluxStore.getState().fluxLibraries
     };
   }
 });
@@ -25,13 +28,13 @@ export default React.createClass({
   // @param {object} fluxLibrary - The flux library object to move down the
   //                               list.
   moveLibraryDown: function (fluxLibrary) {
-    FluxActions.moveDown(fluxLibrary);
+    fluxActions.moveDown(fluxLibrary);
   },
 
   // Requests a Flux library to be moved up within the list
   // @param {object} fluxLibrary - The flux library object to move up the list.
   moveLibraryUp: function (fluxLibrary) {
-    FluxActions.moveUp(fluxLibrary);
+    fluxActions.moveUp(fluxLibrary);
   },
 
   render: function () {

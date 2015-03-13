@@ -1,14 +1,13 @@
 import * as less from './App.less';
 import React from 'react';
-import Router from 'react-router';
+// TODO: Fix when react-router fully supports 0.13
+import Router from 'react-router/build/npm';
 
 const { RouteHandler, Link } = Router;
 
 // A route handler that contains the entirety of the application.
-export default React.createClass({
-  displayName: 'App',
-
-  render: function () {
+export default class App extends React.Component {
+  render() {
     return (
       <div>
         <nav className='navbar navbar-default navbar-fixed-top'>
@@ -22,4 +21,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

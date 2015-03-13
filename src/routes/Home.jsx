@@ -1,12 +1,10 @@
 import React from 'react';
-import Marty from 'marty';
+import Marty from 'marty/dist/node/marty';
 import FluxList from '../components/FluxList';
 
 // A route handler that represents the Home route.
-export default React.createClass({
-  displayName: 'Home',
-
-  render: function () {
+export default class Home extends React.Component {
+  render() {
     return (
       <div className='container-fluid'>
         <div className='page-header'>
@@ -16,4 +14,4 @@ export default React.createClass({
       </div>
     );
   }
-});
+}

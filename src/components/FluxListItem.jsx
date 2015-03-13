@@ -2,39 +2,39 @@ import * as less from './FluxListItem.less';
 import React from 'react';
 
 // A UI element representing a single item within the Flex library list.
-export default React.createClass({
-  displayName: 'FluxListItem',
-
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    url: React.PropTypes.string.isRequired,
-    onMoveDown: React.PropTypes.func.isRequired,
-    onMoveUp: React.PropTypes.func.isRequired
-  },
-
+class FluxListItem extends React.Component {
   // Event handler for when the icon representing moving up is clicked.
-  onMoveUp: function (ev) {
+  onMoveUp(ev) {
     ev.preventDefault();
 
     this.props.onMoveUp();
-  },
+  }
 
   // Event handler for when the icon representing moving down is clicked.
-  onMoveDown: function (ev) {
+  onMoveDown(ev) {
     ev.preventDefault();
 
     this.props.onMoveDown();
-  },
+  }
 
-  render: function () {
+  render() {
     return (
       <li className='flux-list-item list-group-item'>
         <a href={this.props.url} target='_blank'>{this.props.name}</a>
         <ul className='list-inline pull-right'>
-          <li><a href='#' onClick={this.onMoveDown} className='glyphicon glyphicon-menu-down' title={'Move ' + this.props.name + ' Down'}></a></li>
-          <li><a href='#' onClick={this.onMoveUp} className='glyphicon glyphicon-menu-up' title={'Move ' + this.props.name + ' Up'}></a></li>
+          <li><a href='#' onClick={this.onMoveDown.bind(this)} className='glyphicon glyphicon-menu-down' title={'Move ' + this.props.name + ' Down'}></a></li>
+          <li><a href='#' onClick={this.onMoveUp.bind(this)} className='glyphicon glyphicon-menu-up' title={'Move ' + this.props.name + ' Up'}></a></li>
         </ul>
       </li>
     );
   }
-});
+}
+
+FluxListItem.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  url: React.PropTypes.string.isRequired,
+  onMoveDown: React.PropTypes.func.isRequired,
+  onMoveUp: React.PropTypes.func.isRequired
+};
+
+export default FluxListItem;
