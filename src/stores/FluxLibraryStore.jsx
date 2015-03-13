@@ -15,16 +15,16 @@ export default class FluxLibraryStore extends Store {
       // We create our immutable data list of Flux libraries.
       fluxLibraries: Immutable.List([
         {
+          name: 'Flummox',
+          url: 'https://github.com/acdlite/flummox'
+        },
+        {
           name: 'Marty',
           url: 'https://github.com/jhollingworth/marty'
         },
         {
           name: 'minimal-flux',
           url: 'https://github.com/malte-wessel/minimal-flux'
-        },
-        {
-          name: 'Flummox',
-          url: 'https://github.com/acdlite/flummox'
         },
         {
           name: 'Fluxxor',
