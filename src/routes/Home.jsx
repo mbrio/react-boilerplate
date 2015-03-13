@@ -1,6 +1,6 @@
 import React from 'react';
-import Marty from 'marty/dist/node/marty';
-import FluxLibraryList from '../components/FluxLibraryList';
+import flux from '../flux';
+import FluxLibraryContainer from '../containers/FluxLibraryContainer';
 
 // A route handler that represents the Home route.
 export default class Home extends React.Component {
@@ -10,7 +10,8 @@ export default class Home extends React.Component {
         <div className='page-header'>
           <h1>FLUX</h1>
         </div>
-        <FluxLibraryList />
+        <FluxLibraryContainer store={flux.stores.fluxLibrary}
+                              actions={flux.actions.fluxLibrary} />
       </div>
     );
   }
