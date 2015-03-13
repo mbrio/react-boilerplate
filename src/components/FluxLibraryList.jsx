@@ -1,5 +1,5 @@
 import React from 'react';
-import FluxListItem from './FluxListItem';
+import FluxListItem from './FluxLibraryListItem';
 
 // A UI element that represents the list of Flux libraries.
 export default class FluxList extends React.Component {

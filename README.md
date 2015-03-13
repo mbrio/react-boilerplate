@@ -99,7 +99,7 @@ default Bootstrap variables by editing *src/less/variables.less*.
 
 Flux is handled by Flummox in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
-in *src/actions*; and all constants reside in *src/constants*.
+in *src/actions*; and all Flummox Flux objects reside in *src/flux*.
 
 For this example I use immutable data in the Flux store, it is not necessary,
 but is a suggested practice, feel free to remove this if required.

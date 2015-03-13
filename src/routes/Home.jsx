@@ -1,5 +1,5 @@
 import React from 'react';
-import FluxList from '../components/FluxList';
+import FluxLibraryList from '../components/FluxLibraryList';
 import FluxLibraryFlux from '../flux/FluxLibraryFlux';
 import FluxComponent from 'flummox/component';
 
@@ -18,7 +18,7 @@ export default class Home extends React.Component {
             fluxLibraries: store.state.fluxLibraries
           })
         }}>
-          <FluxList />
+          <FluxLibraryList />
         </FluxComponent>
       </div>
     );
