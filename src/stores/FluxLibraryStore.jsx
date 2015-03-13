@@ -3,11 +3,11 @@ import Immutable from 'immutable';
 
 // A Flux store that represents an immutable, ordered list of Flux library
 // information.
-export default class FluxStore extends Store {
+export default class FluxLibraryStore extends Store {
   constructor(flux) {
     super(flux);
 
-    const messageActionIds = flux.getActionIds('Flux');
+    const messageActionIds = flux.getActionIds('FluxLibrary');
     this.register(messageActionIds.moveUp, this.moveUp);
     this.register(messageActionIds.moveDown, this.moveDown);
 
