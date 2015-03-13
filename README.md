@@ -72,7 +72,9 @@ All of the application's React route handlers reside within *src/routes*.
 
 ### React Shared Components
 
-All of the application's React shared components reside within *src/components*.
+All of the application's React shared components reside within *src/components*,
+and all of the application's React container components reside within
+*src/containers*.
 
 ### LESS
 
@@ -84,7 +86,7 @@ file, and shared LESS files are imported and configured within *src/init.less*.
 *src/init.less* imports both Bootstrap and it's theme. You may override the
 default Bootstrap variables by editing *src/less/variables.less*.
 
-### Marty
+### Flux
 
 Flux is handled by Martyjs in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
