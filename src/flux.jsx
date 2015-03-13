@@ -1,8 +1,8 @@
 import { Flux } from 'flummox';
-import FluxLibraryActions from '../actions/FluxLibraryActions';
-import FluxLibraryStore from '../stores/FluxLibraryStore';
+import FluxLibraryActions from './actions/FluxLibraryActions';
+import FluxLibraryStore from './stores/FluxLibraryStore';
 
-export default class FluxLibraryFlux extends Flux {
+class AppFlux extends Flux {
   constructor() {
     super();
 
@@ -10,3 +10,5 @@ export default class FluxLibraryFlux extends Flux {
     this.createStore('FluxLibrary', FluxLibraryStore, this);
   }
 }
+
+export default new AppFlux();
