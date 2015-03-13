@@ -4,7 +4,7 @@ A boilerplate for use compiling static applications consisting of ES6 source
 using Babel and Webpack. Comes pre-configured to use React, React Router,
 minimal-flux, Bootstrap, and LESS.
 
-<!-- TODO: Fix when react-router and Marty fully supports 0.13 -->
+<!-- TODO: Fix when react-router fully supports 0.13 -->
 ## Special Note
 
 This version of React Boilerplate should be considered BETA because:
@@ -83,7 +83,9 @@ All of the application's React route handlers reside within *src/routes*.
 
 ### React Shared Components
 
-All of the application's React shared components reside within *src/components*.
+All of the application's React shared components reside within *src/components*,
+and all of the application's React container components reside within
+*src/containers*.
 
 ### LESS
 
@@ -95,11 +97,11 @@ file, and shared LESS files are imported and configured within *src/init.less*.
 *src/init.less* imports both Bootstrap and it's theme. You may override the
 default Bootstrap variables by editing *src/less/variables.less*.
 
-### minimal-flux
+### Flux
 
 Flux is handled by minimal-flux in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
-in *src/actions*.
+in *src/actions*; and the app's Flux configuration resides at *src/flux.jsx*.
 
 For this example I use immutable data in the Flux store, it is not necessary,
 but is a suggested practice, feel free to remove this if required.

@@ -1,5 +1,4 @@
 import React from 'react';
-import FluxContainer from './FluxContainer';
 import FluxLibraryList from '../components/FluxLibraryList';
 
 // A container that translates Flux state into component properties.

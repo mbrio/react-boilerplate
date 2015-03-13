@@ -1,8 +1,8 @@
 import React from 'react';
-import FluxListItem from './FluxLibraryListItem';
+import FluxLibraryListItem from './FluxLibraryListItem';
 
 // A UI element that represents the list of Flux libraries.
-class FluxList extends React.Component {
+class FluxLibraryList extends React.Component {
   // Requests a Flux library to be moved down within the list
   // @param {object} fluxLibrary - The flux library object to move down the
   //                               list.
@@ -18,7 +18,7 @@ class FluxList extends React.Component {
 
   render() {
     const list = this.props.fluxLibraries.map(flux => {
-      return <FluxListItem key={flux.url} url={flux.url} name={flux.name}
+      return <FluxLibraryListItem key={flux.url} url={flux.url} name={flux.name}
         onMoveUp={this.moveLibraryUp.bind(this, flux)}
         onMoveDown={this.moveLibraryDown.bind(this, flux)} />;
     }).toArray();
@@ -38,10 +38,10 @@ class FluxList extends React.Component {
   }
 }
 
-FluxList.propTypes = {
+FluxLibraryList.propTypes = {
   fluxLibraries: React.PropTypes.object.isRequired,
   onMoveLibraryUp: React.PropTypes.func.isRequired,
   onMoveLibraryDown: React.PropTypes.func.isRequired
 };
 
-export default FluxList;
+export default FluxLibraryList;
