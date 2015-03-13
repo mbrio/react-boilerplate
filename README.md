@@ -6,6 +6,13 @@ correspond with different versions of React and various Flux libraries.
 
 ## Branches
 
+### react-0.13-flummox
+
+Comes pre-configured to use React 0.13, React Router (beta), Flummox,
+Bootstrap, and LESS.
+
+https://github.com/mbrio/react-boilerplate/tree/react-0.13-flummox
+
 ### react-0.13-marty
 
 Comes pre-configured to use React 0.13, React Router (beta), Marty (beta),
