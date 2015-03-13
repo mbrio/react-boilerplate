@@ -6,12 +6,19 @@ correspond with different versions of React and various Flux libraries.
 
 ## Branches
 
+### react-0.13-marty
+
+Comes pre-configured to use React 0.13, React Router (beta), Marty (beta),
+Bootstrap, and LESS.
+
+https://github.com/mbrio/react-boilerplate/tree/react-0.13-marty
+
 ### react-0.12-marty
 
 Comes pre-configured to use React 0.12, React Router, Marty,
 Bootstrap, and LESS.
 
-[https://github.com/mbrio/react-boilerplate/tree/react-0.12-marty]
+https://github.com/mbrio/react-boilerplate/tree/react-0.12-marty
 
 ## License
 
