@@ -7,19 +7,17 @@ class FluxList extends React.Component {
   // @param {object} fluxLibrary - The flux library object to move down the
   //                               list.
   moveLibraryDown(fluxLibrary) {
-    this.props.actions.moveDown(fluxLibrary);
+    this.props.onMoveLibraryDown(fluxLibrary);
   }
 
   // Requests a Flux library to be moved up within the list
   // @param {object} fluxLibrary - The flux library object to move up the list.
   moveLibraryUp(fluxLibrary) {
-    this.props.actions.moveUp(fluxLibrary);
+    this.props.onMoveLibraryUp(fluxLibrary);
   }
 
   render() {
-    const fluxState = this.props.store.getState();
-
-    const list = fluxState.fluxLibraries.map(flux => {
+    const list = this.props.fluxLibraries.map(flux => {
       return <FluxListItem key={flux.url} url={flux.url} name={flux.name}
         onMoveUp={this.moveLibraryUp.bind(this, flux)}
         onMoveDown={this.moveLibraryDown.bind(this, flux)} />;
@@ -41,8 +39,9 @@ class FluxList extends React.Component {
 }
 
 FluxList.propTypes = {
-  store: React.PropTypes.object.isRequired,
-  actions: React.PropTypes.object.isRequired
+  fluxLibraries: React.PropTypes.object.isRequired,
+  onMoveLibraryUp: React.PropTypes.func.isRequired,
+  onMoveLibraryDown: React.PropTypes.func.isRequired
 };
 
 export default FluxList;

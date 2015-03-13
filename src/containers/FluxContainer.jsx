@@ -1,6 +1,8 @@
 import React from 'react';
 
-// A route handler that represents the Home route.
+// A container that manages listening to changes form our Flux store. This
+// component will update it's state when a Flux store's state has changed and
+// pass it's properties, `store` and `actions` onto it's children.
 class FluxContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,8 @@ class FluxContainer extends React.Component {
 }
 
 FluxContainer.propTypes = {
-  store: React.PropTypes.object.isRequired
+  store: React.PropTypes.object.isRequired,
+  actions: React.PropTypes.object.isRequired
 };
 
 export default FluxContainer;

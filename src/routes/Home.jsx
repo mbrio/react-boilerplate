@@ -1,18 +1,7 @@
 import React from 'react';
-import { Flux } from 'minimal-flux';
-import FluxLibraryList from '../components/FluxLibraryList';
-import FluxLibraryActions from '../actions/FluxLibraryActions';
-import FluxLibraryStore from '../stores/FluxLibraryStore';
+import flux from '../flux';
+import FluxLibraryContainer from '../containers/FluxLibraryContainer';
 import FluxContainer from '../containers/FluxContainer';
-
-const flux = new Flux({
-  actions: {
-    fluxLibrary: FluxLibraryActions
-  },
-  stores: {
-    fluxLibrary: FluxLibraryStore
-  }
-});
 
 // A route handler that represents the Home route.
 export default class Home extends React.Component {
@@ -24,7 +13,7 @@ export default class Home extends React.Component {
         </div>
         <FluxContainer store={flux.stores.fluxLibrary}
                        actions={flux.actions.fluxLibrary} >
-          <FluxLibraryList />
+          <FluxLibraryContainer />
         </FluxContainer>
       </div>
     );
