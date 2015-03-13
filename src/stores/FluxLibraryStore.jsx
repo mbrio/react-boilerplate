@@ -1,11 +1,11 @@
 import Marty from 'marty';
 import Immutable from 'immutable';
-import FluxConstants from '../constants/FluxConstants';
+import FluxLibraryConstants from '../constants/FluxLibraryConstants';
 
 // A Flux store that represents an immutable, ordered list of Flux library
 // information.
 export default Marty.createStore({
-  displayName: 'FluxStore',
+  displayName: 'FluxLibraryStore',
 
   getInitialState: function () {
     return {
@@ -36,8 +36,8 @@ export default Marty.createStore({
   },
 
   handlers: {
-    moveUp: FluxConstants.MOVE_UP,
-    moveDown: FluxConstants.MOVE_DOWN
+    moveUp: FluxLibraryConstants.MOVE_UP,
+    moveDown: FluxLibraryConstants.MOVE_DOWN
   },
 
   // Moves a Flux library up the list within `this.state.fluxLibraries`.

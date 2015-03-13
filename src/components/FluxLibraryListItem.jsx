@@ -1,9 +1,9 @@
-import * as less from './FluxListItem.less';
+import * as less from './FluxLibraryListItem.less';
 import React from 'react';
 
 // A UI element representing a single item within the Flex library list.
 export default React.createClass({
-  displayName: 'FluxListItem',
+  displayName: 'FluxLibraryListItem',
 
   propTypes: {
     name: React.PropTypes.string.isRequired,

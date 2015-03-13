@@ -1,16 +1,16 @@
 import React from 'react';
 import Marty from 'marty';
-import FluxStore from '../stores/FluxStore';
-import FluxActions from '../actions/FluxActions';
-import FluxListItem from './FluxListItem';
+import FluxLibraryStore from '../stores/FluxLibraryStore';
+import FluxLibraryActions from '../actions/FluxLibraryActions';
+import FluxLibraryListItem from './FluxLibraryListItem';
 
 // A state mixin to be used by `FluxList`.
 let FluxState = Marty.createStateMixin({
-  listenTo: [FluxStore],
+  listenTo: [FluxLibraryStore],
 
   getState: function () {
     return {
-      fluxLibraries: FluxStore.getState().fluxLibraries
+      fluxLibraries: FluxLibraryStore.getState().fluxLibraries
     };
   }
 });
@@ -25,18 +25,18 @@ export default React.createClass({
   // @param {object} fluxLibrary - The flux library object to move down the
   //                               list.
   moveLibraryDown: function (fluxLibrary) {
-    FluxActions.moveDown(fluxLibrary);
+    FluxLibraryActions.moveDown(fluxLibrary);
   },
 
   // Requests a Flux library to be moved up within the list
   // @param {object} fluxLibrary - The flux library object to move up the list.
   moveLibraryUp: function (fluxLibrary) {
-    FluxActions.moveUp(fluxLibrary);
+    FluxLibraryActions.moveUp(fluxLibrary);
   },
 
   render: function () {
     const list = this.state.fluxLibraries.map(flux => {
-      return <FluxListItem key={flux.url} url={flux.url} name={flux.name}
+      return <FluxLibraryListItem key={flux.url} url={flux.url} name={flux.name}
         onMoveUp={this.moveLibraryUp.bind(this, flux)}
         onMoveDown={this.moveLibraryDown.bind(this, flux)} />;
     }).toArray();

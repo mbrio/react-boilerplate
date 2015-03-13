@@ -1,6 +1,6 @@
 import React from 'react';
 import Marty from 'marty';
-import FluxList from '../components/FluxList';
+import FluxLibraryList from '../components/FluxLibraryList';
 
 // A route handler that represents the Home route.
 export default React.createClass({
@@ -12,7 +12,7 @@ export default React.createClass({
         <div className='page-header'>
           <h1>FLUX</h1>
         </div>
-        <FluxList />
+        <FluxLibraryList />
       </div>
     );
   }
