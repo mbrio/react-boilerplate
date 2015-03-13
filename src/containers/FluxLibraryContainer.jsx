@@ -7,15 +7,13 @@ class FluxLibraryContainer extends React.Component {
   // @param {object} fluxLibrary - The flux library object to move down the
   //                               list.
   moveLibraryDown(fluxLibrary) {
-    const action = this.props.flux.getActionIds('FluxLibrary').moveDown;
-    this.props.flux.dispatch(action, fluxLibrary);
+    this.props.flux.getActions('FluxLibrary').moveDown(fluxLibrary);
   }
 
   // Requests a Flux library to be moved up within the list
   // @param {object} fluxLibrary - The flux library object to move up the list.
   moveLibraryUp(fluxLibrary) {
-    const action = this.props.flux.getActionIds('FluxLibrary').moveUp;
-    this.props.flux.dispatch(action, fluxLibrary);
+    this.props.flux.getActions('FluxLibrary').moveUp(fluxLibrary);
   }
 
   render() {
