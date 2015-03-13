@@ -1,42 +1,25 @@
 import React from 'react';
-import Marty from 'marty/dist/node/marty';
 import FluxListItem from './FluxListItem';
-import FluxActions from '../actions/FluxActions';
-import FluxStore from '../stores/FluxStore';
-
-// TODO: Find out if this is correct, documentation is scarce at the moment!
-let fluxStore = Marty.register(FluxStore);
-let fluxActions = new FluxActions();
 
 // A UI element that represents the list of Flux libraries.
-export default class FluxList extends Marty.Component {
-  constructor(props, context) {
-    this.listenTo = [fluxStore];
-
-    super(props, context);
-  }
-
-  getState() {
-    return {
-      fluxLibraries: fluxStore.state.fluxLibraries
-    };
-  }
-
+export default class FluxList extends React.Component {
   // Requests a Flux library to be moved down within the list
   // @param {object} fluxLibrary - The flux library object to move down the
   //                               list.
   moveLibraryDown(fluxLibrary) {
-    fluxActions.moveDown(fluxLibrary);
+    const action = this.props.flux.getActionIds('Flux').moveDown;
+    this.props.flux.dispatch(action, fluxLibrary);
   }
 
   // Requests a Flux library to be moved up within the list
   // @param {object} fluxLibrary - The flux library object to move up the list.
   moveLibraryUp(fluxLibrary) {
-    fluxActions.moveUp(fluxLibrary);
+    const action = this.props.flux.getActionIds('Flux').moveUp;
+    this.props.flux.dispatch(action, fluxLibrary);
   }
 
   render() {
-    const list = this.state.fluxLibraries.map(flux => {
+    const list = this.props.fluxLibraries.map(flux => {
       return <FluxListItem key={flux.url} url={flux.url} name={flux.name}
         onMoveUp={this.moveLibraryUp.bind(this, flux)}
         onMoveDown={this.moveLibraryDown.bind(this, flux)} />;

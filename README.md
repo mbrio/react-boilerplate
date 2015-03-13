@@ -1,8 +1,8 @@
 # React Boilerplate
 
 A boilerplate for use compiling static applications consisting of ES6 source
-using Babel and Webpack. Comes pre-configured to use React, React Router, Marty,
-Bootstrap, and LESS.
+using Babel and Webpack. Comes pre-configured to use React, React Router,
+Flummox, Bootstrap, and LESS.
 
 <!-- TODO: Fix when react-router and Marty fully supports 0.13 -->
 ## Special Note
@@ -13,10 +13,7 @@ As of today (March 12, 2015) React Router does not have an npm released version
 that is compatible with React 0.13. It is nearly done, but we are unfortunately
 forced to use the React Router branch *0.13-compat*.
 
-Also Marty 0.9-RC1 isn't in a finalized state so there may be changes coming
-soon.
-
-As soon as these libraries are complete I will update the code.
+As soon as this library is complete I will update the code.
 
 ## Build
 
@@ -98,16 +95,14 @@ file, and shared LESS files are imported and configured within *src/init.less*.
 *src/init.less* imports both Bootstrap and it's theme. You may override the
 default Bootstrap variables by editing *src/less/variables.less*.
 
-### Marty
+### Flummox
 
-Flux is handled by Martyjs in React Boilerplate and it's files reside in
+Flux is handled by Flummox in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
 in *src/actions*; and all constants reside in *src/constants*.
 
 For this example I use immutable data in the Flux store, it is not necessary,
-but is a suggested practice by [Marty](
-http://martyjs.org/guides/stores/immutable-data-collections.html), feel free to
-remove this if required.
+but is a suggested practice, feel free to remove this if required.
 
 ## License
 

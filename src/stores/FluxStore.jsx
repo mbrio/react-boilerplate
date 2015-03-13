@@ -1,21 +1,17 @@
-import Marty from 'marty/dist/node/marty';
+import { Store } from 'flummox';
 import Immutable from 'immutable';
-import FluxConstants from '../constants/FluxConstants';
 
 // A Flux store that represents an immutable, ordered list of Flux library
 // information.
-export default class FluxStore extends Marty.Store {
-  constructor(options) {
-    this.handlers = {
-      moveUp: FluxConstants.MOVE_UP,
-      moveDown: FluxConstants.MOVE_DOWN
-    };
+export default class FluxStore extends Store {
+  constructor(flux) {
+    super(flux);
 
-    super(options);
-  }
+    const messageActionIds = flux.getActionIds('Flux');
+    this.register(messageActionIds.moveUp, this.moveUp);
+    this.register(messageActionIds.moveDown, this.moveDown);
 
-  getInitialState() {
-    return {
+    this.state = {
       // We create our immutable data list of Flux libraries.
       fluxLibraries: Immutable.List([
         {
@@ -80,7 +76,8 @@ export default class FluxStore extends Marty.Store {
     const newOrder = this.state.fluxLibraries.slice(a, b + 1).reverse().toArray();
     const newState = this.state.fluxLibraries.splice(a, 2, ...newOrder);
 
-    this.state.fluxLibraries = newState;
-    this.hasChanged();
+    this.setState({
+      fluxLibraries: newState
+    });
   }
 }
