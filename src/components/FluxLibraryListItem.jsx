@@ -1,8 +1,8 @@
-import * as less from './FluxListItem.less';
+import * as less from './FluxLibraryListItem.less';
 import React from 'react';
 
 // A UI element representing a single item within the Flex library list.
-class FluxListItem extends React.Component {
+class FluxLibraryListItem extends React.Component {
   // Event handler for when the icon representing moving up is clicked.
   onMoveUp(ev) {
     ev.preventDefault();
@@ -30,11 +30,11 @@ class FluxListItem extends React.Component {
   }
 }
 
-FluxListItem.propTypes = {
+FluxLibraryListItem.propTypes = {
   name: React.PropTypes.string.isRequired,
   url: React.PropTypes.string.isRequired,
   onMoveDown: React.PropTypes.func.isRequired,
   onMoveUp: React.PropTypes.func.isRequired
 };
 
-export default FluxListItem;
+export default FluxLibraryListItem;

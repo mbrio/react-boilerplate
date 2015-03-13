@@ -1,14 +1,14 @@
 import Marty from 'marty/dist/node/marty';
 import Immutable from 'immutable';
-import FluxConstants from '../constants/FluxConstants';
+import FluxLibraryConstants from '../constants/FluxLibraryConstants';
 
 // A Flux store that represents an immutable, ordered list of Flux library
 // information.
-export default class FluxStore extends Marty.Store {
+export default class FluxLibraryStore extends Marty.Store {
   constructor(options) {
     this.handlers = {
-      moveUp: FluxConstants.MOVE_UP,
-      moveDown: FluxConstants.MOVE_DOWN
+      moveUp: FluxLibraryConstants.MOVE_UP,
+      moveDown: FluxLibraryConstants.MOVE_DOWN
     };
 
     super(options);
