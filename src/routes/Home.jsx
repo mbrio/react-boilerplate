@@ -1,9 +1,18 @@
 import React from 'react';
+import { Flux } from 'minimal-flux';
 import FluxLibraryList from '../components/FluxLibraryList';
-import FluxLibraryFlux from '../flux/FluxLibraryFlux';
-import FluxComponent from 'flummox/component';
+import FluxLibraryActions from '../actions/FluxLibraryActions';
+import FluxLibraryStore from '../stores/FluxLibraryStore';
+import FluxContainer from '../containers/FluxContainer';
 
-const fluxLibraryFlux = new FluxLibraryFlux();
+const flux = new Flux({
+  actions: {
+    fluxLibrary: FluxLibraryActions
+  },
+  stores: {
+    fluxLibrary: FluxLibraryStore
+  }
+});
 
 // A route handler that represents the Home route.
 export default class Home extends React.Component {
@@ -13,13 +22,10 @@ export default class Home extends React.Component {
         <div className='page-header'>
           <h1>FLUX</h1>
         </div>
-        <FluxComponent flux={fluxLibraryFlux} connectToStores={{
-          FluxLibrary: store => ({
-            fluxLibraries: store.state.fluxLibraries
-          })
-        }}>
+        <FluxContainer store={flux.stores.fluxLibrary}
+                       actions={flux.actions.fluxLibrary} >
           <FluxLibraryList />
-        </FluxComponent>
+        </FluxContainer>
       </div>
     );
   }

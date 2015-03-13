@@ -1,4 +1,4 @@
-import { Store } from 'flummox';
+import { Store } from 'minimal-flux';
 import Immutable from 'immutable';
 
 // A Flux store that represents an immutable, ordered list of Flux library
@@ -7,13 +7,16 @@ export default class FluxLibraryStore extends Store {
   constructor(flux) {
     super(flux);
 
-    const messageActionIds = flux.getActionIds('FluxLibrary');
-    this.register(messageActionIds.moveUp, this.moveUp);
-    this.register(messageActionIds.moveDown, this.moveDown);
+    this.handleAction('fluxLibrary.MOVE_UP', this.moveUp);
+    this.handleAction('fluxLibrary.MOVE_DOWN', this.moveDown);
 
     this.state = {
       // We create our immutable data list of Flux libraries.
       fluxLibraries: Immutable.List([
+        {
+          name: 'minimal-flux',
+          url: 'https://github.com/malte-wessel/minimal-flux'
+        },
         {
           name: 'Flummox',
           url: 'https://github.com/acdlite/flummox'
@@ -21,10 +24,6 @@ export default class FluxLibraryStore extends Store {
         {
           name: 'Marty',
           url: 'https://github.com/jhollingworth/marty'
-        },
-        {
-          name: 'minimal-flux',
-          url: 'https://github.com/malte-wessel/minimal-flux'
         },
         {
           name: 'Fluxxor',
@@ -41,7 +40,8 @@ export default class FluxLibraryStore extends Store {
   // Moves a Flux library up the list within `this.state.fluxLibraries`.
   // @param {object} fluxLibrary - The flux library object to move up the list.
   moveUp(fluxLibrary) {
-    const index = this.state.fluxLibraries.indexOf(fluxLibrary);
+    const state = this.getState();
+    const index = state.fluxLibraries.indexOf(fluxLibrary);
 
     if (index <= 0) {
       return;
@@ -49,22 +49,23 @@ export default class FluxLibraryStore extends Store {
 
     const newIndex = index - 1;
 
-    this.swapIndexes(newIndex, index);
+    this.swapIndexes(state, newIndex, index);
   }
 
   // Moves a Flux library down the list within `this.state.fluxLibraries`.
   // @param {object} fluxLibrary - The flux library object to move down the
   //                               list.
   moveDown(fluxLibrary) {
-    const index = this.state.fluxLibraries.indexOf(fluxLibrary);
+    const state = this.getState();
+    const index = state.fluxLibraries.indexOf(fluxLibrary);
 
-    if (index >= this.state.fluxLibraries.size - 1) {
+    if (index >= state.fluxLibraries.size - 1) {
       return;
     }
 
     const newIndex = index + 1;
 
-    this.swapIndexes(index, newIndex);
+    this.swapIndexes(state, index, newIndex);
   }
 
   // Swaps two adjacent items within `this.state.fluxLibraries`.
@@ -72,9 +73,9 @@ export default class FluxLibraryStore extends Store {
   //                     representing the first item to be swapped.
   // @param {number} b - The index futhest from the beginning of the array
   //                     representing the second item to be swapped.
-  swapIndexes(a, b) {
-    const newOrder = this.state.fluxLibraries.slice(a, b + 1).reverse().toArray();
-    const newState = this.state.fluxLibraries.splice(a, 2, ...newOrder);
+  swapIndexes(state, a, b) {
+    const newOrder = state.fluxLibraries.slice(a, b + 1).reverse().toArray();
+    const newState = state.fluxLibraries.splice(a, 2, ...newOrder);
 
     this.setState({
       fluxLibraries: newState

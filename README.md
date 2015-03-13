@@ -2,7 +2,7 @@
 
 A boilerplate for use compiling static applications consisting of ES6 source
 using Babel and Webpack. Comes pre-configured to use React, React Router,
-Flummox, Bootstrap, and LESS.
+minimal-flux, Bootstrap, and LESS.
 
 <!-- TODO: Fix when react-router and Marty fully supports 0.13 -->
 ## Special Note
@@ -95,11 +95,11 @@ file, and shared LESS files are imported and configured within *src/init.less*.
 *src/init.less* imports both Bootstrap and it's theme. You may override the
 default Bootstrap variables by editing *src/less/variables.less*.
 
-### Flummox
+### minimal-flux
 
-Flux is handled by Flummox in React Boilerplate and it's files reside in
+Flux is handled by minimal-flux in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
-in *src/actions*; and all Flummox Flux objects reside in *src/flux*.
+in *src/actions*.
 
 For this example I use immutable data in the Flux store, it is not necessary,
 but is a suggested practice, feel free to remove this if required.
