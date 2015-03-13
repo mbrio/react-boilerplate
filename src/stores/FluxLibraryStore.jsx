@@ -7,8 +7,8 @@ export default class FluxLibraryStore extends Store {
   constructor(flux) {
     super(flux);
 
-    this.handleAction('fluxLibrary.MOVE_UP', this.moveUp);
-    this.handleAction('fluxLibrary.MOVE_DOWN', this.moveDown);
+    this.handleAction('fluxLibrary.moveUp', this.moveUp);
+    this.handleAction('fluxLibrary.moveDown', this.moveDown);
 
     this.state = {
       // We create our immutable data list of Flux libraries.
