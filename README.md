@@ -83,7 +83,9 @@ All of the application's React route handlers reside within *src/routes*.
 
 ### React Shared Components
 
-All of the application's React shared components reside within *src/components*.
+All of the application's React shared components reside within *src/components*,
+and all of the application's React container components reside within
+*src/containers*.
 
 ### LESS
 
@@ -95,11 +97,11 @@ file, and shared LESS files are imported and configured within *src/init.less*.
 *src/init.less* imports both Bootstrap and it's theme. You may override the
 default Bootstrap variables by editing *src/less/variables.less*.
 
-### Flummox
+### Flux
 
 Flux is handled by Flummox in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
-in *src/actions*; and all Flummox Flux objects reside in *src/flux*.
+in *src/actions*; and the app's Flux configuration resides at *src/flux.jsx*.
 
 For this example I use immutable data in the Flux store, it is not necessary,
 but is a suggested practice, feel free to remove this if required.
