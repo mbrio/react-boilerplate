@@ -31,6 +31,8 @@ https://github.com/mbrio/react-boilerplate/tree/react-0.13-minimal-flux
 
 ## Branches (React 0.12)
 
+These branches are listed in alphabetical order, not by personal perferences.
+
 ### react-0.12-marty
 
 Comes pre-configured to use React 0.12, React Router, Marty,
