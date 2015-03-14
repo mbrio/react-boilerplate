@@ -24,7 +24,7 @@ https://github.com/mbrio/react-boilerplate/tree/react-0.13-marty
 
 ### react-0.13-minimal-flux
 
-Comes pre-configured to use React 0.13, React Router (beta), Marty (beta),
+Comes pre-configured to use React 0.13, React Router (beta), minimal-flux,
 Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.13-minimal-flux
