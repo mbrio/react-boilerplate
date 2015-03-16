@@ -42,7 +42,7 @@ export default React.createClass({
   },
 
   render: function () {
-    if (this.props.store) {
+    if (this.props.store && this.props.actions) {
       return (<FluxLibraryList fluxLibraries={this.state.fluxLibraries}
                                onMoveLibraryUp={this.moveLibraryUp}
                                onMoveLibraryDown={this.moveLibraryDown} />);
