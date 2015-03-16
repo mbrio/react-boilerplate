@@ -47,6 +47,13 @@ Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.12-marty
 
+### react-0.12-reflux
+
+Comes pre-configured to use React 0.12, React Router, Reflux,
+Bootstrap, and LESS.
+
+https://github.com/mbrio/react-boilerplate/tree/react-0.12-reflux
+
 ## License
 
 React Boilerplate is [BSD licensed](./LICENSE).
