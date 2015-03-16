@@ -40,6 +40,13 @@ https://github.com/mbrio/react-boilerplate/tree/react-0.13-reflux
 
 These branches are listed in alphabetical order, not by personal perferences.
 
+### react-0.12-fluxxor
+
+Comes pre-configured to use React 0.12, React Router, Fluxxor,
+Bootstrap, and LESS.
+
+https://github.com/mbrio/react-boilerplate/tree/react-0.12-fluxxor
+
 ### react-0.12-marty
 
 Comes pre-configured to use React 0.12, React Router, Marty,
