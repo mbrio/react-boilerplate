@@ -29,6 +29,13 @@ Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.13-minimal-flux
 
+### react-0.13-reflux
+
+Comes pre-configured to use React 0.13, React Router (beta), Reflux,
+Bootstrap, and LESS.
+
+https://github.com/mbrio/react-boilerplate/tree/react-0.13-reflux
+
 ## Branches (React 0.12)
 
 These branches are listed in alphabetical order, not by personal perferences.
