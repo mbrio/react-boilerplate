@@ -11,9 +11,7 @@ class FluxLibraryContainer extends Marty.Component {
   }
 
   getState() {
-    return {
-      fluxLibraries: this.props.store.state.fluxLibraries
-    };
+    return this.props.store.state;
   }
 
   // Requests a Flux library to be moved down within the list
