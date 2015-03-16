@@ -20,12 +20,12 @@ export default React.createClass({
   },
 
   componentDidMount: function() {
-    this.props.store.addListener("change", this.onStatusChange);
+    this.props.store.addListener('change', this.onStatusChange);
     this.setState(this.props.store.state);
   },
 
   componentWillUnmount: function () {
-    this.props.store.removeListener("change", this.onStatusChange);
+    this.props.store.removeListener('change', this.onStatusChange);
   },
 
   // Requests a Flux library to be moved down within the list
@@ -43,9 +43,7 @@ export default React.createClass({
 
   render: function () {
     if (this.props.store) {
-      const fluxState = this.state;
-
-      return (<FluxLibraryList fluxLibraries={fluxState.fluxLibraries}
+      return (<FluxLibraryList fluxLibraries={this.state.fluxLibraries}
                                onMoveLibraryUp={this.moveLibraryUp}
                                onMoveLibraryDown={this.moveLibraryDown} />);
     } else {
