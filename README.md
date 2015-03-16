@@ -90,7 +90,8 @@ default Bootstrap variables by editing *src/less/variables.less*.
 
 Flux is handled by Fluxxor in React Boilerplate and it's files reside in
 multiple locations; all data stores reside in *src/stores*; all actions reside
-in *src/actions*; and the app's Flux configuration resides at *src/flux.jsx*.
+in *src/actions*; all constants reside in *src/constants*; and the app's Flux
+configuration resides at *src/flux.jsx*.
 
 For this example I use immutable data in the Flux store, it is not necessary,
 but is a suggested practice, feel free to remove this if required.
