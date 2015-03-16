@@ -1,25 +1,31 @@
 import React from 'react';
-import { ListenerMixin } from 'reflux';
+import Fluxxor from 'fluxxor';
 import FluxLibraryList from '../components/FluxLibraryList';
 
 // A container that translates Flux state into component properties.
 export default React.createClass({
   displayName: 'FluxLibraryContainer',
 
-  mixins: [ListenerMixin],
-
   propTypes: {
     store: React.PropTypes.object.isRequired,
     actions: React.PropTypes.object.isRequired
   },
 
-  onStatusChange: function (status) {
-    this.setState(status);
+  onStatusChange: function () {
+    this.setState(this.props.store.state);
+  },
+
+  getInitialState: function () {
+    return this.props.store.state;
   },
 
   componentDidMount: function() {
-    this.listenTo(this.props.store, this.onStatusChange);
+    this.props.store.addListener("change", this.onStatusChange);
     this.setState(this.props.store.state);
+  },
+
+  componentWillUnmount: function () {
+    this.props.store.removeListener("change", this.onStatusChange);
   },
 
   // Requests a Flux library to be moved down within the list
@@ -36,8 +42,8 @@ export default React.createClass({
   },
 
   render: function () {
-    if (this.props.store && this.props.actions) {
-      const fluxState = this.props.store.state;
+    if (this.props.store) {
+      const fluxState = this.state;
 
       return (<FluxLibraryList fluxLibraries={fluxState.fluxLibraries}
                                onMoveLibraryUp={this.moveLibraryUp}
