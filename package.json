@@ -51,14 +51,12 @@
     "react-hot-loader": "^1.1.7",
     "react-router": "rackt/react-router#0.13-compat",
     "react-tools": "^0.13.0",
+    "reflux": "^0.2.7",
     "rimraf": "^2.3.2",
     "script-loader": "^0.6.1",
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.7.2",
     "webpack-dev-server": "^1.7.0"
-  },
-  "dependencies": {
-    "reflux": "^0.2.7"
   }
 }
