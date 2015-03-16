@@ -1,8 +1,27 @@
 import React from 'react';
+import Fluxxor from 'fluxxor';
 import FluxLibraryList from '../components/FluxLibraryList';
 
 // A container that translates Flux state into component properties.
 class FluxLibraryContainer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = props.store.state;
+  }
+
+  onStatusChange() {
+    this.setState(this.props.store.state);
+  }
+
+  componentDidMount() {
+    this.props.store.addListener("change", this.onStatusChange.bind(this));
+  }
+
+  componentWillUnmount() {
+    this.props.store.removeListener("change", this.onStatusChange.bind(this));
+  }
+
   // Requests a Flux library to be moved down within the list
   // @param {object} fluxLibrary - The flux library object to move down the
   //                               list.
@@ -18,7 +37,7 @@ class FluxLibraryContainer extends React.Component {
 
   render() {
     if (this.props.store && this.props.actions) {
-      const fluxState = this.props.store.state;
+      const fluxState = this.state;
 
       return (<FluxLibraryList fluxLibraries={fluxState.fluxLibraries}
                                onMoveLibraryUp={this.moveLibraryUp.bind(this)}

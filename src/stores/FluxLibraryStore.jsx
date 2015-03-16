@@ -1,17 +1,23 @@
-import Reflux from 'reflux';
+import Fluxxor from 'fluxxor';
 import Immutable from 'immutable';
-import FluxLibraryActions from '../actions/FluxLibraryActions';
+import fluxLibraryConstants from '../constants/FluxLibraryConstants';
 
 // A Flux store that represents an immutable, ordered list of Flux library
 // information.
-export default Reflux.createStore({
-  init: function () {
-    this.listenTo(FluxLibraryActions.moveUp, this.moveUp);
-    this.listenTo(FluxLibraryActions.moveDown, this.moveDown);
+export default Fluxxor.createStore({
+  initialize: function () {
+    this.bindActions(
+      fluxLibraryConstants.MOVE_DOWN, this.moveDown,
+      fluxLibraryConstants.MOVE_UP, this.moveUp
+    );
 
     this.state = {
       // We create our immutable data list of Flux libraries.
       fluxLibraries: Immutable.List([
+        {
+          name: 'Fluxxor',
+          url: 'https://github.com/BinaryMuse/fluxxor'
+        },
         {
           name: 'Reflux',
           url: 'https://github.com/spoike/refluxjs'
@@ -27,10 +33,6 @@ export default Reflux.createStore({
         {
           name: 'Marty',
           url: 'https://github.com/jhollingworth/marty'
-        },
-        {
-          name: 'Fluxxor',
-          url: 'https://github.com/BinaryMuse/fluxxor'
         }
       ])
     };
@@ -78,6 +80,6 @@ export default Reflux.createStore({
       fluxLibraries: newState
     };
 
-    this.trigger(this.state);
+    this.emit('change');
   }
 });
