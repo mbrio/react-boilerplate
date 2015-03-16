@@ -15,6 +15,13 @@ Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.13-flummox
 
+### react-0.13-fluxxor
+
+Comes pre-configured to use React 0.13, React Router (beta), Fluxxor,
+Bootstrap, and LESS.
+
+https://github.com/mbrio/react-boilerplate/tree/react-0.13-fluxxor
+
 ### react-0.13-marty
 
 Comes pre-configured to use React 0.13, React Router (beta), Marty (beta),
