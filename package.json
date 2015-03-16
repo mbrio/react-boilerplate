@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "0.12.0",
-  "description": "A boilerplate for use compiling static applications consisting of ES6 source using Babel and Webpack. Comes pre-configured to use React, React Router, Marty, Bootstrap, and LESS.",
+  "description": "A boilerplate for use compiling static applications consisting of ES6 source using Babel and Webpack. Comes pre-configured to use React, React Router, Reflux, Bootstrap, and LESS.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf -rf build",
@@ -14,8 +14,7 @@
     "webpack",
     "react",
     "reactjs",
-    "marty",
-    "martyjs",
+    "reflux",
     "react-router",
     "babel",
     "bootstrap",
@@ -48,18 +47,16 @@
     "jsxhint-loader": "^0.2.0",
     "less": "^2.4.0",
     "less-loader": "^2.1.0",
-    "marty": "^0.8.14",
     "react": "^0.12.2",
     "react-hot-loader": "^1.1.7",
     "react-router": "^0.12.4",
     "react-tools": "^0.12.2",
+    "reflux": "^0.2.7",
     "rimraf": "^2.3.2",
     "script-loader": "^0.6.1",
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.7.2",
     "webpack-dev-server": "^1.7.0"
-  },
-  "dependencies": {
   }
 }
