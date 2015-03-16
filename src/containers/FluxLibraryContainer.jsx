@@ -17,9 +17,12 @@ export default React.createClass({
     this.setState(status);
   },
 
+  getInitialState: function () {
+    return this.props.store.state;
+  },
+
   componentDidMount: function() {
     this.listenTo(this.props.store, this.onStatusChange);
-    this.setState(this.props.store.state);
   },
 
   // Requests a Flux library to be moved down within the list
@@ -37,9 +40,7 @@ export default React.createClass({
 
   render: function () {
     if (this.props.store && this.props.actions) {
-      const fluxState = this.props.store.state;
-
-      return (<FluxLibraryList fluxLibraries={fluxState.fluxLibraries}
+      return (<FluxLibraryList fluxLibraries={this.state.fluxLibraries}
                                onMoveLibraryUp={this.moveLibraryUp}
                                onMoveLibraryDown={this.moveLibraryDown} />);
     } else {
