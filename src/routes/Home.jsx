@@ -1,6 +1,8 @@
 import React from 'react';
 import Marty from 'marty';
 import FluxLibraryContainer from '../containers/FluxLibraryContainer';
+import FluxLibraryActions from '../actions/FluxLibraryActions';
+import FluxLibraryStore from '../stores/FluxLibraryStore';
 
 // A route handler that represents the Home route.
 export default React.createClass({
@@ -12,7 +14,8 @@ export default React.createClass({
         <div className='page-header'>
           <h1>FLUX</h1>
         </div>
-        <FluxLibraryContainer />
+        <FluxLibraryContainer store={FluxLibraryStore}
+                              actions={FluxLibraryActions} />
       </div>
     );
   }
