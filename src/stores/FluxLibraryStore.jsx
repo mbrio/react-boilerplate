@@ -1,5 +1,6 @@
 import { Store } from 'minimal-flux';
 import Immutable from 'immutable';
+import fluxLibraryConstants from '../constants/FluxLibraryConstants';
 
 // A Flux store that represents an immutable, ordered list of Flux library
 // information.
@@ -7,8 +8,8 @@ export default class FluxLibraryStore extends Store {
   constructor(flux) {
     super(flux);
 
-    this.handleAction('fluxLibrary.moveUp', this.moveUp);
-    this.handleAction('fluxLibrary.moveDown', this.moveDown);
+    this.handleAction(fluxLibraryConstants.moveUp, this.moveUp);
+    this.handleAction(fluxLibraryConstants.moveDown, this.moveDown);
 
     this.state = {
       // We create our immutable data list of Flux libraries.
