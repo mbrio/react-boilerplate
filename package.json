@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "0.13.0",
-  "description": "A boilerplate for use compiling static applications consisting of ES6 source using Babel and Webpack. Comes pre-configured to use React, React Router, minimal-flux, Bootstrap, and LESS.",
+  "description": "A boilerplate for use compiling static applications consisting of ES6 source using Babel and Webpack. Comes pre-configured to use React, React Router, Reflux, Bootstrap, and LESS.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf -rf build",
@@ -14,7 +14,7 @@
     "webpack",
     "react",
     "reactjs",
-    "minimal-flux",
+    "reflux",
     "react-router",
     "babel",
     "bootstrap",
@@ -47,7 +47,6 @@
     "jsxhint-loader": "^0.2.0",
     "less": "^2.4.0",
     "less-loader": "^2.1.0",
-    "minimal-flux": "mbrio/minimal-flux",
     "react": "^0.13.0",
     "react-hot-loader": "^1.1.7",
     "react-router": "rackt/react-router#0.13-compat",
@@ -59,5 +58,7 @@
     "webpack": "^1.7.2",
     "webpack-dev-server": "^1.7.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "reflux": "^0.2.7"
+  }
 }

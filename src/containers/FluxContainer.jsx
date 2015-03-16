@@ -1,25 +1,29 @@
 import React from 'react';
+import { ListenerMixin } from 'reflux';
 
 // A container that manages listening to changes form our Flux store. This
 // component will update it's state when a Flux store's state has changed and
 // pass it's properties, `store` and `actions` onto it's children.
-class FluxContainer extends React.Component {
-  constructor(props) {
-    super(props);
+export default React.createClass({
+  displayName: 'FluxContainer',
 
-    this.setState = this.setState.bind(this);
-    this.state = props.store.getState();
-  }
+  mixins: [ListenerMixin],
 
-  componentWillMount() {
-    this.props.store.addListener('change', this.setState);
-  }
+  onStatusChange: function (status) {
+    this.setState(status);
+  },
 
-  componentWillUnmount() {
-    this.props.store.removeListener('change', this.setState);
-  }
+  componentDidMount: function() {
+    this.listenTo(this.props.store, this.onStatusChange);
+    this.setState(this.props.store.state);
+  },
 
-  render() {
+  propTypes: {
+    store: React.PropTypes.object.isRequired,
+    actions: React.PropTypes.object.isRequired
+  },
+
+  render: function () {
     const props = this.props;
     const children = React.Children.map(this.props.children, function (child) {
       return React.cloneElement(child, props);
@@ -33,11 +37,4 @@ class FluxContainer extends React.Component {
       return (<div></div>);
     }
   }
-}
-
-FluxContainer.propTypes = {
-  store: React.PropTypes.object.isRequired,
-  actions: React.PropTypes.object.isRequired
-};
-
-export default FluxContainer;
+});

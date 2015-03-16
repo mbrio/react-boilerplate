@@ -18,7 +18,7 @@ class FluxLibraryContainer extends React.Component {
 
   render() {
     if (this.props.store && this.props.actions) {
-      const fluxState = this.props.store.getState();
+      const fluxState = this.props.store.state;
 
       return (<FluxLibraryList fluxLibraries={fluxState.fluxLibraries}
                                onMoveLibraryUp={this.moveLibraryUp.bind(this)}
