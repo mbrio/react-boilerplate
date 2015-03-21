@@ -10,35 +10,35 @@ These branches are listed in alphabetical order, not by personal perferences.
 
 ### react-0.13-flummox
 
-Comes pre-configured to use React 0.13, React Router (beta), Flummox,
+Comes pre-configured to use React 0.13, React Router, Flummox,
 Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.13-flummox
 
 ### react-0.13-fluxxor
 
-Comes pre-configured to use React 0.13, React Router (beta), Fluxxor,
+Comes pre-configured to use React 0.13, React Router, Fluxxor,
 Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.13-fluxxor
 
 ### react-0.13-marty
 
-Comes pre-configured to use React 0.13, React Router (beta), Marty (beta),
+Comes pre-configured to use React 0.13, React Router, Marty (beta),
 Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.13-marty
 
 ### react-0.13-minimal-flux
 
-Comes pre-configured to use React 0.13, React Router (beta), minimal-flux,
+Comes pre-configured to use React 0.13, React Router, minimal-flux,
 Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.13-minimal-flux
 
 ### react-0.13-reflux
 
-Comes pre-configured to use React 0.13, React Router (beta), Reflux,
+Comes pre-configured to use React 0.13, React Router, Reflux,
 Bootstrap, and LESS.
 
 https://github.com/mbrio/react-boilerplate/tree/react-0.13-reflux
