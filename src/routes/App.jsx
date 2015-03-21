@@ -1,7 +1,6 @@
 import * as less from './App.less';
 import React from 'react';
-// TODO: Fix when react-router fully supports 0.13
-import Router from 'react-router/build/npm';
+import Router from 'react-router';
 
 const { RouteHandler, Link } = Router;
 
