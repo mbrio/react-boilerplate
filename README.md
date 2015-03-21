@@ -9,14 +9,8 @@ Bootstrap, and LESS.
 
 This version of React Boilerplate should be considered BETA because:
 
-As of today (March 12, 2015) React Router does not have an npm released version
-that is compatible with React 0.13. It is nearly done, but we are unfortunately
-forced to use the React Router branch *0.13-compat*.
-
-Also Marty 0.9-RC1 isn't in a finalized state so there may be changes coming
-soon.
-
-As soon as these libraries are complete I will update the code.
+Marty 0.9-RC2 isn't in a finalized state so there may be changes coming
+soon. As soon as this libraries are complete I will update the code.
 
 ## Build
 
