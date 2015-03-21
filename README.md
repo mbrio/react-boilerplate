@@ -4,7 +4,7 @@ A boilerplate for use compiling static applications consisting of ES6 source
 using Babel and Webpack. Comes pre-configured to use React, React Router, Marty,
 Bootstrap, and LESS.
 
-<!-- TODO: Fix when react-router and Marty fully supports 0.13 -->
+<!-- TODO: Fix when Marty has full support for 0.13 -->
 ## Special Note
 
 This version of React Boilerplate should be considered BETA because:
