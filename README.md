@@ -4,17 +4,6 @@ A boilerplate for use compiling static applications consisting of ES6 source
 using Babel and Webpack. Comes pre-configured to use React, React Router,
 minimal-flux, Bootstrap, and LESS.
 
-<!-- TODO: Fix when react-router fully supports 0.13 -->
-## Special Note
-
-This version of React Boilerplate should be considered BETA because:
-
-As of today (March 12, 2015) React Router does not have an npm released version
-that is compatible with React 0.13. It is nearly done, but we are unfortunately
-forced to use the React Router branch *0.13-compat*.
-
-As soon as this library is complete I will update the code.
-
 ## Build
 
 In order to build the project you will first need to install all necessary node

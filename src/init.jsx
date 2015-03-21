@@ -30,8 +30,7 @@ import * as less from './init.less';
 // import * as bsTransition from 'bootstrap/js/transition.js';
 
 import React from 'react';
-// TODO: Fix when react-router fully supports 0.13
-import Router from 'react-router/build/npm';
+import Router from 'react-router';
 import routes from './routes';
 const { HashLocation, HistoryLocation } = Router;
 
