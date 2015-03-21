@@ -5,6 +5,10 @@ import FluxComponent from 'flummox/component';
 
 // A route handler that represents the Home route.
 export default class Home extends React.Component {
+  componentDidMount() {
+    flux.getActions('FluxLibrary').getListItems();
+  }
+
   render() {
     return (
       <div className='container-fluid'>

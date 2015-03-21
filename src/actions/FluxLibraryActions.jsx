@@ -14,4 +14,12 @@ export default class FluxLibraryActions extends Actions {
     moveDown(fluxLibrary) {
       return fluxLibrary;
     }
+
+    // Loads list items from
+    getListItems() {
+      return fetch('/list.json')
+          .then(function (response) {
+            return response.json();
+          });
+    }
 }

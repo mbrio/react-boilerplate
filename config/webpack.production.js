@@ -8,7 +8,14 @@ module.exports = {
   entry: {
     app: [
       './src/init',
-      './src/index.html'
+      './src/index.html',
+
+      // This can be removed if not using our service worker
+      './src/list.json'
+    ],
+    // We configure our FluxLibraryServiceWorker as it's own entry
+    'flux-library-service-worker': [
+      './src/workers/FluxLibraryServiceWorker'
     ]
   },
   output: {
@@ -40,7 +47,11 @@ module.exports = {
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.gif(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-      { test: /\.html(\?v=\d+\.\d+\.\d+)?$/, exclude: /node_modules/, loader: "file?name=[path][name].[ext]&context=src" }
+      { test: /\.html(\?v=\d+\.\d+\.\d+)?$/, exclude: /node_modules/, loader: "file?name=[path][name].[ext]&context=src" },
+
+      // This can be removed if not using our ServiceWorker, it is here to allow
+      // us to copy the fake JSON response.
+      { test: /\.json(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=[path][name].[ext]&context=src" }
     ]
   }
 };

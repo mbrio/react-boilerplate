@@ -10,32 +10,35 @@ export default class FluxLibraryStore extends Store {
     const messageActionIds = flux.getActionIds('FluxLibrary');
     this.register(messageActionIds.moveUp, this.moveUp);
     this.register(messageActionIds.moveDown, this.moveDown);
+    this.registerAsync(messageActionIds.getListItems, this.getListItemsLoadBegin, this.getListItemsLoadSuccess, this.getListItemsLoadFailure);
 
     this.state = {
+      loading: false,
+      error: null,
       // We create our immutable data list of Flux libraries.
-      fluxLibraries: Immutable.List([
-        {
-          name: 'Flummox',
-          url: 'https://github.com/acdlite/flummox'
-        },
-        {
-          name: 'Marty',
-          url: 'https://github.com/jhollingworth/marty'
-        },
-        {
-          name: 'minimal-flux',
-          url: 'https://github.com/malte-wessel/minimal-flux'
-        },
-        {
-          name: 'Fluxxor',
-          url: 'https://github.com/BinaryMuse/fluxxor'
-        },
-        {
-          name: 'Reflux',
-          url: 'https://github.com/spoike/refluxjs'
-        }
-      ])
+      fluxLibraries: Immutable.List()
     };
+  }
+
+  getListItemsLoadBegin() {
+    this.setState({
+      loading: true
+    });
+  }
+
+  getListItemsLoadSuccess(items) {
+    this.setState({
+      loading: false,
+      error: null,
+      fluxLibraries: Immutable.List(items)
+    });
+  }
+
+  getListItemsLoadFailure(err) {
+    this.setState({
+      loading: false,
+      error: err
+    });
   }
 
   // Moves a Flux library up the list within `this.state.fluxLibraries`.

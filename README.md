@@ -6,6 +6,9 @@ Flummox, Bootstrap, and LESS.
 
 As soon as this library is complete I will update the code.
 
+
+TALK ABOUT THE JSON WEBPACK CONFIGURATION
+
 ## Build
 
 In order to build the project you will first need to install all necessary node
