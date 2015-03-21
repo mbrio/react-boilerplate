@@ -1,6 +1,6 @@
 import React from 'react';
 // TODO: Fix when react-router fully supports 0.13
-import Router from 'react-router/build/npm';
+import Router from 'react-router';
 const { Route, DefaultRoute } = Router;
 
 // You must import all of the components that represent route handlers
