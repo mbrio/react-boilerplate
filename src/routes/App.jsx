@@ -1,6 +1,5 @@
 import * as less from './App.less';
 import React from 'react';
-// TODO: Fix when react-router fully supports 0.13
 import { RouteHandler, Link } from 'react-router';
 
 // A route handler that contains the entirety of the application.
