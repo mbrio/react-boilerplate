@@ -1,6 +1,6 @@
 {
   "name": "react-boilerplate",
-  "version": "1.0.3",
+  "version": "1.3.0",
   "description": "A boilerplate for use compiling static applications consisting of ES6 source using Babel and Webpack. Comes pre-configured to use React, React Router, Reflux, Bootstrap, and LESS.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
