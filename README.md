@@ -2,7 +2,9 @@
 
 A boilerplate for use compiling static applications consisting of ES6 source
 using Babel and Webpack. Comes pre-configured to use React, React Router,
-Flummox, Bootstrap, and LESS. This configuration comes with a service worker for
+Flummox, Bootstrap, and LESS.
+
+This configuration comes with a service worker for
 building offline applications.
 
 Some helper libraries are included in this project including
