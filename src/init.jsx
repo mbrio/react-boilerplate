@@ -8,7 +8,7 @@ const { HashLocation, HistoryLocation } = Router;
 import * as vendors from './vendors';
 
 // Initializes all ServiceWorker instances
-import servicesInit from './services';
+import startServices from './services';
 
 // Initializes all routes
 import routes from './routes';
@@ -36,6 +36,9 @@ let location = HashLocation;
 //   location = HistoryLocation;
 // }
 
-Router.run(routes, location, function(Handler) {
-  return React.render(<Handler />, document.body);
+// We start our services then our router
+startServices().then(() => {
+  Router.run(routes, location, function(Handler) {
+    return React.render(<Handler />, document.body);
+  });
 });

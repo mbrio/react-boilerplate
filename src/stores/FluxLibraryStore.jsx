@@ -7,8 +7,6 @@ export default class FluxLibraryStore extends Store {
   constructor(flux) {
     super(flux);
 
-    console.log(flux);
-
     const messageActionIds = flux.getActionIds('FluxLibrary');
     this.register(messageActionIds.moveUp, this.moveUp);
     this.register(messageActionIds.moveDown, this.moveDown);
