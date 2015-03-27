@@ -4,9 +4,21 @@ A set of boilerplates for use compiling static applications consisting of ES6
 source using Babel and Webpack. The various branches of React Boilerplate
 correspond with different versions of React and various Flux libraries.
 
+## Branches (React 0.13 with Service Workers)
+
+These branches are listed in alphabetical order, not by personal preference.
+
+### react-0.13-flummox-service
+
+Comes pre-configured to use React 0.13, React Router, Flummox,
+Bootstrap, and LESS. Comes configured with a service worker for building
+offline experiences.
+
+https://github.com/mbrio/react-boilerplate/tree/react-0.13-flummox-service
+
 ## Branches (React 0.13)
 
-These branches are listed in alphabetical order, not by personal perferences.
+These branches are listed in alphabetical order, not by personal preference.
 
 ### react-0.13-flummox
 
@@ -45,7 +57,7 @@ https://github.com/mbrio/react-boilerplate/tree/react-0.13-reflux
 
 ## Branches (React 0.12)
 
-These branches are listed in alphabetical order, not by personal perferences.
+These branches are listed in alphabetical order, not by personal preference.
 
 ### react-0.12-fluxxor
 
