@@ -4,7 +4,10 @@ A boilerplate for use compiling static applications consisting of ES6 source
 using Babel and Webpack. Comes pre-configured to use React, React Router,
 Flummox, Bootstrap, and LESS.
 
-As soon as this library is complete I will update the code.
+Some helper libraries are included in this project including
+[classenames](https://www.npmjs.com/package/classnames),
+[Immutable](https://www.npmjs.com/package/immutable), and
+[whatwg-fetch](https://www.npmjs.com/package/whatwg-fetch).
 
 ## Build
 
