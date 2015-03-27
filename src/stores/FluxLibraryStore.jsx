@@ -7,6 +7,8 @@ export default class FluxLibraryStore extends Store {
   constructor(flux) {
     super(flux);
 
+    console.log(flux);
+
     const messageActionIds = flux.getActionIds('FluxLibrary');
     this.register(messageActionIds.moveUp, this.moveUp);
     this.register(messageActionIds.moveDown, this.moveDown);
@@ -15,17 +17,23 @@ export default class FluxLibraryStore extends Store {
     this.state = {
       loading: false,
       error: null,
-      // We create our immutable data list of Flux libraries.
+      // We are using an immutable list to ensure the data is not updated
+      // outside of the store
       fluxLibraries: Immutable.List()
     };
   }
 
+  // The handler used for the start of an asynchronous network call to load in
+  // the flux data.
   getListItemsLoadBegin() {
     this.setState({
       loading: true
     });
   }
 
+  // The handler used when an asynchronous network call to load in the flux
+  // data succeeds.
+  // @param {array} items - The flux library items
   getListItemsLoadSuccess(items) {
     this.setState({
       loading: false,
@@ -34,6 +42,9 @@ export default class FluxLibraryStore extends Store {
     });
   }
 
+  // The handler used when an asynchronous network call to load in the flux
+  // data fails.
+  // @param {object} err - The error object returned from the network call
   getListItemsLoadFailure(err) {
     this.setState({
       loading: false,

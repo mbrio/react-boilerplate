@@ -15,7 +15,8 @@ export default class FluxLibraryActions extends Actions {
       return fluxLibrary;
     }
 
-    // Loads list items from
+    // Loads list items from the network, our service worker is handling
+    // caching this file.
     getListItems() {
       return fetch('/list.json')
           .then(function (response) {

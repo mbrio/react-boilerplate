@@ -3,12 +3,12 @@ import React from 'react';
 import Router from 'react-router';
 const { HashLocation, HistoryLocation } = Router;
 
-// Initializes all ServiceWorker instances
-import * as services from './services';
-
 // Initializes required vendor libraries, if you want to use Bootstrap JS you can
 // import them here.
 import * as vendors from './vendors';
+
+// Initializes all ServiceWorker instances
+import servicesInit from './services';
 
 // Initializes all routes
 import routes from './routes';
