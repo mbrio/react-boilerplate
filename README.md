@@ -2,12 +2,22 @@
 
 A boilerplate for use compiling static applications consisting of ES6 source
 using Babel and Webpack. Comes pre-configured to use React, React Router,
-Flummox, Bootstrap, and LESS.
+Flummox, Bootstrap, and LESS. This configuration comes with a service worker for
+building offline applications.
 
-As soon as this library is complete I will update the code.
+Some helper libraries are included in this project including
+[classenames](https://www.npmjs.com/package/classnames),
+[Immutable](https://www.npmjs.com/package/immutable), and
+[whatwg-fetch](https://www.npmjs.com/package/whatwg-fetch).
 
+## Configuration
 
-TALK ABOUT THE JSON WEBPACK CONFIGURATION
+This boilerplate has a special configuration for JSON files within Webpack.
+Since writing a web API is outside the scope of this project we use Webpack's
+file loader to handle JSON files. This is probably not what you'd want to do in
+a production environment. In order to remove this configuration you can edit the
+*webpack.production.js* file, the changes will be propagated to the other
+Webpack environments.
 
 ## Build
 
@@ -61,7 +71,18 @@ will reside in the *build* directory.
 ### Initialization
 
 The *src/init.jsx* file configures the application's environment, includes the
-application's routes, and runs the React Router on `document.body`.
+application's routes, starts the application's service workers, and runs the
+React Router on `document.body`.
+
+### Service Workers
+
+Service workers aid in the development of offline applications. This particular
+project is configured in an extremely simple way to cache the included JSON
+file. For more information on service workers you can checkout the documentation
+on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API).
+
+In order to debug service workers in Chrome you can go to
+[about:serviceworker-internals](about:serviceworker-internals).
 
 ### Routing
 
