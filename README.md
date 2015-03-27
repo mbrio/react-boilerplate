@@ -84,6 +84,10 @@ on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API).
 In order to debug service workers in Chrome you can go to
 [about:serviceworker-internals](about:serviceworker-internals).
 
+For information about various decisions that need to be made when deciding on a
+caching policy for service workers, check out
+[The Offline Cookbook](http://jakearchibald.com/2014/offline-cookbook/).
+
 ### Routing
 
 This configuration uses React Router for all routing needs, you must specify
