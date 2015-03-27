@@ -1,6 +1,6 @@
 {
   "name": "react-boilerplate",
-  "version": "0.13.0",
+  "version": "1.0.6",
   "description": "A boilerplate for use compiling static applications consisting of ES6 source using Babel and Webpack. Comes pre-configured to use React, React Router, Marty, Bootstrap, and LESS.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -58,7 +58,8 @@
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.7.2",
-    "webpack-dev-server": "^1.7.0"
+    "webpack-dev-server": "^1.7.0",
+    "whatwg-fetch": "^0.7.0"
   },
   "dependencies": {}
 }
